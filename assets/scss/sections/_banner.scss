@@ -1,0 +1,77 @@
+/* Banner Section Style */
+.banner{
+    color: $color-white;
+    &__slider{
+        .slick{
+            &__arrows{
+                top: 0;
+                width: 10%;
+                height: 100%;
+                color: $color-white;
+                background-color: transparent;
+                font-size: toRem(45);
+                opacity: 0.6;
+                &--left{
+                    left: 0;
+                }
+                &--right{
+                    right: 0;
+                }
+                &:hover,
+                &:focus-visible{
+                    color: $color-white;
+                    opacity: 1;
+                }
+            }
+            &-dots{
+                position: absolute;
+                width: 100%;
+                transform: translateY(-500%);
+                li{
+                    &:not(:last-child){
+                        margin-right: 1rem;
+                    }
+                    button{
+                        font-size: 0;
+                        width: toRem(40);
+                        height: toRem(5);
+                        background: darken($color-white, $amount: 30);
+                        border: 0;
+                        border-radius: 0;
+                    }
+                    &.slick-active{
+                        button{
+                            background: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__slide__wrapper{
+        --gradient-overlay: linear-gradient(180deg,rgba(67,65,78,0.34) 49%,rgba(25,51,109,0.49) 100%);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 31vh 15px;
+        @include mobile{
+            padding: 26vh 15px;
+        }
+    }
+    &__logo{
+        margin-bottom: toRem(50);
+        &__icon{
+            width: 18rem;
+        }
+    }
+    &__title{
+        font-weight: 300;
+        line-height: 1.1;
+        @include min-tablet{
+            font-size: toRem(40);
+        }
+        @include min-desktop{
+            font-size: toRem(70);
+        }
+    }
+}

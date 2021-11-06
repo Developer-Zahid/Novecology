@@ -1,0 +1,66 @@
+/* Common Button's Style */
+.primary-btn{
+	color: unset;
+	font-size: 1.2rem;
+	font-family: $font-primary;
+	font-weight: 400;
+	padding: 0.7em 1.4em;
+	background: unset;
+	@extend %transition;
+	&:hover, 
+	&:focus{
+		color: unset;
+		background: unset;
+	}
+}
+
+.gradient-btn{
+	&--primary,
+	&--secondary{
+		font-size: toRem(15);
+		font-weight: 300;
+		padding: toRem(10) toRem(30);
+		z-index: 1;
+		@extend %transition;
+		&::before,
+		&::after{
+			content: "";
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			border-radius: inherit;
+			z-index: -1;
+			@extend %transition;
+		}
+		&::before{
+			@extend %primary-gradient;
+			opacity: 0;
+		}
+		&:hover,
+		&:focus{
+			color: $color-white;
+			&::before{
+				opacity: 1;
+			}
+			&::after{
+				opacity: 0;
+			}
+		}
+	}
+	&--primary{
+		color: $color-primary;
+		background-color: $color-white;
+		&::after{
+			background-color: $color-white;
+		}
+	}
+	&--secondary{
+		color: $color-white;
+		@extend %secondary-gradient;
+		&::after{
+			@extend %secondary-gradient;
+		}
+	}
+}

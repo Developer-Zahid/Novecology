@@ -1,0 +1,12 @@
+/* Common Transition Style */
+%transition{
+    transition: all linear .3s;
+}
+
+/* Common Gradient Style */
+%primary-gradient{
+    background-image: linear-gradient(-90deg, $color-primary-gradient--1, $color-primary-gradient--2);
+}
+%secondary-gradient{
+    background-image: linear-gradient(90deg, $color-secondary, $color-secondary-gradient--2);
+}

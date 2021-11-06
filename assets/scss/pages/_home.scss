@@ -1,0 +1,40 @@
+/* About Section Style */
+.about{
+    .section-header__title{
+        font-weight: 600;
+        &::after{
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -20%;
+            width: 12%;
+            height: 3px;
+            background-color: $color-primary;
+        }
+    }
+    &__text{
+        color: $color-black--200;
+        @include min-desktop{
+            font-size: toRem(26);
+        }
+    }
+}
+
+/* Expertise Section Style */
+.expertise{
+    background-image: linear-gradient(80deg,#5bc4b4,#4493c4 100%);
+    &__text{
+        @include min-desktop{
+            font-size: toRem(18);
+        }
+    }
+    &__shape{
+        height: toRem(59);
+        @include desktop{
+            transform: scaleX(3);
+        }
+        @include mobile{
+            transform: scaleX(6);
+        }
+    }
+}

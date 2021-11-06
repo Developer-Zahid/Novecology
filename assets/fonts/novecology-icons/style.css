@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'novecology';
+  src:  url('fonts/novecology.eot?563piy');
+  src:  url('fonts/novecology.eot?563piy#iefix') format('embedded-opentype'),
+    url('fonts/novecology.ttf?563piy') format('truetype'),
+    url('fonts/novecology.woff?563piy') format('woff'),
+    url('fonts/novecology.svg?563piy#novecology') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="novecology-icon-"], [class*=" novecology-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'novecology' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.novecology-icon-twitter:before {
+  content: "\e904";
+}
+.novecology-icon-youtube:before {
+  content: "\e903";
+}
+.novecology-icon-facebook:before {
+  content: "\e900";
+}
+.novecology-icon-instagram:before {
+  content: "\e901";
+}
+.novecology-icon-facebook-square:before {
+  content: "\e902";
+}
+.novecology-icon-chevron-right:before {
+  content: "\e906";
+}
+.novecology-icon-chevron-left:before {
+  content: "\e905";
+}
+.novecology-icon-linkedin:before {
+  content: "\eac9";
+}

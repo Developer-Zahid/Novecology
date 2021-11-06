@@ -1,0 +1,42 @@
+/* Footer Section Style */
+.footer{
+    background-color: $color-primary;
+    &__block{
+        &__title{
+            color: rgba($color-white, $alpha: 0.25);
+            font-size: toRem(14);
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 1.6;
+            margin-bottom: toRem(15);
+        }
+        &__list{
+            &__item{
+                color: $color-white;
+            }
+            &--darken .footer__block__list__item{
+                color: rgba($color-white, $alpha: 0.4);
+            }
+            &__link{
+                font-size: toRem(12);
+                padding: 2px;
+                &:hover,
+                &:focus{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    &__copyright{
+        color: rgba($color-white, $alpha: 0.35);
+        font-size: toRem(12);
+        &__link{
+            @extend %transition;
+            &:hover,
+            &:focus{
+                color: $color-secondary;
+                text-decoration: underline;
+            }
+        }
+    }
+}

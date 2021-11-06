@@ -1,0 +1,25 @@
+/* Expertise Section Style */
+.footer-contact{
+    background-image: linear-gradient(130deg,#4493c4,#00f2ff 89%);
+    &__title,
+    &__link{
+        font-weight: 600;
+    }
+    &__title{
+        font-size: toRem(24);
+        line-height: 1.3;
+    }
+    &__link{
+        font-size: toRem(22);
+        @extend %transition;
+        &:hover,
+        &:focus{
+            color: $color-primary;
+        }
+    }
+    .gradient-btn--primary{
+        font-weight: 600;
+        padding-top: toRem(16);
+        padding-bottom: toRem(16)
+    }
+}
