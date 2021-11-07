@@ -1,16 +1,17 @@
 /* Common Button's Style */
 .primary-btn{
-	color: unset;
-	font-size: 1.2rem;
+	color: $color-primary;
+	font-size:  toRem(15);
 	font-family: $font-primary;
-	font-weight: 400;
-	padding: 0.7em 1.4em;
-	background: unset;
+	font-weight: 600;
+	padding: toRem(16)  toRem(30);
+	background-color: $color-white;
+	box-shadow: toRem(7) toRem(5) toRem(22) rgba(67,65,78,0.2);
 	@extend %transition;
 	&:hover, 
 	&:focus{
-		color: unset;
-		background: unset;
+		color: $color-white;
+		background-color: $color-primary;
 	}
 }
 
@@ -63,4 +64,10 @@
 			@extend %secondary-gradient;
 		}
 	}
+}
+
+.tag-btn{
+	font-size: toRem(11);
+	padding: toRem(6) toRem(20);
+	@extend %primary-gradient;
 }

@@ -1,0 +1,95 @@
+/* Common Blogs Card Style */
+.blogs{
+    &__slider{
+        .slick{
+            &__arrows{
+                --size: 42px;
+                transform: translateY(-200%);
+                width: var(--size);
+                height: var(--size);
+                border-radius: 50%;
+                color: $color-primary;
+                background-color: $color-white;
+                box-shadow: toRem(5) toRem(5) toRem(20) rgba($color-black, $alpha: 0.12);
+                font-size: toRem(20);
+                &--left{
+                    right: calc((var(--size) + 14px) * 1.2);
+                }
+                &--right{
+                    right: 14px;
+                }
+                &:hover,
+                &:focus-visible{
+                    color: $color-white;
+                    background-color: $color-secondary;
+                }
+            }
+            &-dots{
+                margin-top: toRem(-20);
+                li{
+                    &:first-child,
+                    &:last-child{
+                        button{
+                            transform: scale(0.6);
+                        }
+                    }
+                    button{
+                        width: toRem(8);
+                        height: toRem(8);
+                        background: rgba($color-white, $alpha: 0.7);
+                        border-radius: toRem(8);
+                    }
+                    &.slick-active{
+                        button{
+                            transform: scale(1.2);
+                            background: $color-white;
+                        }
+                    }
+                }
+            }
+        }
+        &--hidden-arrows{
+            .slick__arrows{
+                display: none !important;
+            }
+        }
+    }
+    &__card{
+        &__image{
+            min-height: toRem(300);
+        }
+        &__date{
+            top: toRem(10);
+            right: toRem(10);
+            font-size: toRem(12);
+            padding: toRem(11.5) toRem(16);
+            background-color: rgba($color-black, $alpha: 0.5);
+        }
+        .tag-btn{
+            bottom: toRem(20);
+            left: toRem(20);
+        }
+        &__body{
+            padding: toRem(30);
+            min-height: toRem(105);
+            background-color: $color-white;
+            @extend %transition;
+        }
+        &__title{
+            color: $color-primary;
+            font-size: toRem(17);
+            font-weight: 600;
+            @extend %transition;
+        }
+        &:hover{
+            .blogs__card{
+                &__body{
+                    background-color: $color-primary;
+                }
+                &__title{
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

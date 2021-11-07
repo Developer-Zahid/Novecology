@@ -13,10 +13,10 @@
 	background: $color-primary;
 }
 
-// html,
-// body{
-// 	scroll-behavior: smooth;
-// }
+html,
+body{
+	scroll-behavior: smooth;
+}
 
 html{
 	font-size: 16px;
@@ -24,9 +24,10 @@ html{
 }
 
 body {
-	color: $color-black;
+	color: $color-black--200;
 	font-weight: 400;
 	font-family: $font-primary;
+	line-height: 1.6;
 }
 
 a,
@@ -82,25 +83,7 @@ img{
 		top: 0;
 		position: absolute;
 		z-index: 2;
-		width: 10%;
-		height: 100%;
-		color: $color-white;
-		background-color: transparent;
-		font-size: toRem(45);
-		text-align: center;
-		opacity: 0.6;
 		@extend %transition;
-		&--left{
-			left: 0;
-		}
-		&--right{
-			right: 0;
-		}
-		&:hover,
-		&:focus-visible{
-			color: $color-white;
-			opacity: 1;
-		}
 	}
 	&-dots{
 		display: flex;
@@ -112,18 +95,14 @@ img{
 				margin-right: 1rem;
 			}
 			button{
+				position: relative;
 				font-size: 0;
-				width: toRem(8);
-				height: toRem(8);
-				background: $color-primary;
-				border: 1px solid $color-primary;
-				border-radius: toRem(8);
+				border: 0;
 				@extend %transition;
 			}
 			&.slick-active{
 				button{
-					width: toRem(16);
-					background: transparent;
+					background-color: inherit;
 				}
 			}
 		}
@@ -172,9 +151,6 @@ img{
 /* Common Section Gap Style */
 .section-gap{
 	padding: toRem(65) 0;
-	@include desktop{
-		padding: 3rem 0;
-	}
 	&--fix{
 		padding-bottom: calc(6rem - 30px);
 		@include desktop{
@@ -193,9 +169,72 @@ img{
 		line-height: 1;
 		@include min-tablet{
 			line-height: 1.1;
+			&--md{
+				font-size: toRem(40);
+			}
 			&--lg{
 				font-size: toRem(50);
 			}
 		}
+		&__small{
+			font-size: toRem(16);
+			letter-spacing: 3px;
+			font-weight: inherit;
+		}
 	}
+}
+
+/* Common Highlight Text Style */
+.highlight-text{
+	color: $color-primary;
+}
+
+/* Common Bullet Point List Style */
+.bullet-point-list{
+	li{
+		background-image: url("../images/icons/right-arrow.svg");
+		background-repeat: no-repeat;
+		background-position: left 8px;
+		background-size: 15px;
+		padding-left: toRem(25);
+		margin-bottom: toRem(10);
+	}
+}
+
+/* Common Wavy Background Style */
+.wavy-bg{
+	background-color: rgba($color-secondary-gradient--2, $alpha: 0.05);
+	&__top,
+	&__bottom{
+		&__shape{
+			height: toRem(30);
+		}
+	}
+	&__top{
+		top: 0;
+		transform: scaleY(-1) scaleX(-1);
+		&__shape{
+			@include min-tablet{
+				height: toRem(60);
+			}
+		}
+	}
+	.container{
+		position: relative;
+		z-index: 1;
+	}
+	&__bottom{
+		bottom: 0;
+		&__shape{
+			@include min-tablet{
+				height: toRem(160);
+			}
+		}
+	}
+}
+
+/* If Slick Slider not support in browser then use this fallback Style */
+.blogs__slider:not(.slick-slider) .blogs__slide,
+.testimonial__slider:not(.slick-slider) .testimonial__slide{
+	margin-bottom: toRem(30);
 }

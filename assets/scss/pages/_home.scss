@@ -13,10 +13,12 @@
         }
     }
     &__text{
-        color: $color-black--200;
         @include min-desktop{
             font-size: toRem(26);
         }
+    }
+    &__video{
+        cursor: pointer;
     }
 }
 

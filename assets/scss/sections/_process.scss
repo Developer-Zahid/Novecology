@@ -1,0 +1,27 @@
+/* Banner Section Style */
+.process{
+    &__block{
+        @include min-desktop-lg{
+            padding: 0 toRem(20);
+        }
+        &__circle{
+            width: toRem(70);
+            height: toRem(70);
+            background-image: linear-gradient(110deg, $color-secondary, $color-secondary-gradient--2 100%);
+        }
+        &__icon{
+            width: toRem(30);
+            height: toRem(30);
+            fill: $color-white;
+        }
+        &__title{
+            color: $color-primary;
+            font-size: toRem(20);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        &__text{
+            line-height: 1.6;
+        }
+    }
+}

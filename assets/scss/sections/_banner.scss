@@ -32,16 +32,13 @@
                         margin-right: 1rem;
                     }
                     button{
-                        font-size: 0;
                         width: toRem(40);
-                        height: toRem(5);
+                        height: toRem(4);
                         background: darken($color-white, $amount: 30);
-                        border: 0;
-                        border-radius: 0;
                     }
                     &.slick-active{
                         button{
-                            background: $color-white;
+                            background-color: $color-white;
                         }
                     }
                 }

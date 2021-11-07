@@ -1,0 +1,82 @@
+/* Common Testimonial Card Style */
+.testimonial{
+    &__slider{
+        .slick{
+            &__arrows{
+                --size: 42px;
+                width: var(--size);
+                height: var(--size);
+                transform: translateY(20%);
+                border-radius: 50%;
+                color: $color-primary;
+                background-color: $color-white;
+                box-shadow: toRem(5) toRem(5) toRem(20) rgba($color-black, $alpha: 0.12);
+                font-size: toRem(20);
+                @include min-mobile-xxs{
+                    transform: translateY(-100%);
+                }
+                &--left{
+                    right: calc((var(--size) + 14px) * 1.2);
+                }
+                &--right{
+                    right: 14px;
+                }
+                &:hover,
+                &:focus-visible{
+                    color: $color-white;
+                    background-color: $color-secondary;
+                }
+            }
+            &-list{
+                padding-top: toRem(30);
+                padding-bottom: toRem(30);
+            }
+            &-dots{
+                margin-top: toRem(-10);
+                li{
+                    &:first-child,
+                    &:last-child{
+                        button{
+                            transform: scale(0.6);
+                        }
+                    }
+                    button{
+                        width: toRem(8);
+                        height: toRem(8);
+                        background: darken($color-white, $amount: 4);
+                        border-radius: toRem(8);
+                    }
+                    &.slick-active{
+                        button{
+                            transform: scale(1.2);
+                            background: #dee1e3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__card{
+        padding: toRem(30);
+        box-shadow: toRem(2) toRem(3) toRem(18) rgba($color-black, $alpha: 0.07);
+        &__quote-icon{
+            width: toRem(60);
+            fill: #b3c1ce;
+        }
+        &__text{
+            line-height: 1.6;
+        }
+        &__author{
+            &__avatar{
+                width: toRem(30);
+                height: toRem(30);
+                background-color: #eaeaea;
+            }
+            &__name{
+                color: $color-primary;
+                font-size: toRem(11);
+                font-weight: 500;
+            }
+        }
+    }
+}
