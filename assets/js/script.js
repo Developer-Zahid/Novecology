@@ -12,23 +12,9 @@
 		var scrolling = $(this).scrollTop();
 
 		if (scrolling > $('.header').outerHeight()) {
-			$(".header").addClass("header--fixed");
+			$(".header--fixed").addClass("fixed");
 		} else {
-			$(".header").removeClass("header--fixed");
-		}
-	});
-
-	/* Sticky Header on Scroll function */
-	let headerElementOffsetTop = parseInt($('.header--sticky').offset().top) ;
-
-	$(window).on("scroll", function () {
-		let scrolling = $(this).scrollTop();
-		let distanceBetweenWindowsTop = headerElementOffsetTop - scrolling;
-
-		if (scrolling > distanceBetweenWindowsTop) {
-			$(".header--sticky").addClass("sticky");
-		} else {
-			$(".header--sticky").removeClass("sticky");
+			$(".header--fixed").removeClass("fixed");
 		}
 	});
 

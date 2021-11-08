@@ -1,74 +1,8 @@
 /* Header Section Style */
 .header{
-	// position: absolute;
-	// top: 0;
 	z-index: 9;
 	@extend %transition;
 	.navbar{
-		&-toggler{
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			font-size: toRem(12);
-			letter-spacing: 4px;
-			color: $color-primary;
-			background-color: $color-white;
-			font-weight: 600;
-			width: toRem(130);
-			height: toRem(60);
-			border-radius: 0;
-			box-shadow: 4px 9px 20px rgba(80, 136, 163, 0.15);
-			z-index: 8;
-			transition: all 0.25s ease;
-			&__wrapper{
-				transition: all 0.25s ease;
-			}
-			&__text{
-				@extend %transition;
-			}
-			&__icon{
-				width: toRem(20);
-				height: toRem(20);
-				color: $color-primary;
-				@extend %transition;
-				&::before,
-				&::after{
-					content: "";
-					position: absolute;
-					width: 100%;
-					height: 1px;
-					background-color: currentColor;
-					transition: transform 0.5s cubic-bezier(0, 0.785, 0, 1);
-				}
-			}
-			&[aria-expanded="true"]{
-				width: toRem(60);
-				border-radius: 0 30px 0 0;
-				@extend %secondary-gradient;
-				.navbar-toggler{
-					&__wrapper{
-						padding-right: 6px;
-					}
-					&__text{
-						opacity: 0;
-						font-size: 0;
-						position: absolute;
-					}
-					&__icon{
-						color: $color-white;
-						transform: rotate(45deg);
-						&::after{
-							transform: rotate(90deg);
-						}
-					}
-				}
-			}
-			&:hover{
-				.navbar-toggler__text{
-					color: $color-secondary;
-				}
-			}
-		}
 		&-collapse{
 			&__logo{
 				order: 1;
@@ -161,6 +95,22 @@
 						&::after{
 							display: none;
 						}
+						&::before{
+							@include min-desktop-lg{
+								content: "";
+							}
+							position: absolute;
+							bottom: 0;
+							left: 50%;
+							transform: translate(-50%, 50%) rotate(45deg);
+							width: toRem(10);
+							height: toRem(10);
+							background-color: $color-primary;
+							opacity: 0;
+							visibility: hidden;
+							pointer-events: none;
+							transition: all linear .2s;
+						}
 					}
 					&-menu{
 						padding: 0;
@@ -205,6 +155,7 @@
 							color: $color-secondary;
 						}
 						&.active{
+							color: $color-secondary;
 							@include min-desktop-lg{
 								color: $color-white;
 								border: 2px solid currentColor;
@@ -221,9 +172,15 @@
 					@include min-desktop-lg{
 						&:hover,
 						&:focus{
-							.dropdown-menu{
-								opacity: 1;
-								visibility: visible;
+							.dropdown{
+								&-toggle::before,
+								&-menu{
+									opacity: 1;
+									visibility: visible;
+								}
+								&-toggle::before{
+									transition-duration: .3s;
+								}
 							}
 							.nav-link{
 								color: $color-secondary;
@@ -242,10 +199,12 @@
 					padding: toRem(20) toRem(15);
 				}
 				@extend %transition;
-				&.active,
 				&:hover,
 				&:focus-visible{
 					color: $color-secondary;
+				}
+				&.active{
+					color: $color-secondary-gradient--2 !important;
 				}
 				&:focus ~ .dropdown-menu{
 					@include min-desktop-lg{
@@ -265,10 +224,8 @@
 						margin-bottom: toRem(15);
 					}
 				}
-				@include desktop-lg{
-					.gradient-btn--primary{
-						box-shadow: 0 2px 15px rgba($color-black, $alpha: 0.1);
-					}
+				.gradient-btn--primary{
+					@extend %shadow;
 				}
 			}
 			@include desktop-lg{
@@ -293,19 +250,119 @@
 			}
 		}
 	}
-	// &--fixed{
-	// 	position: fixed;
-	// 	transform: translateY(-100%);
-	// 	box-shadow: 0 3px 18px rgba($color-black, $alpha: 0.12);
-	// 	animation: header_in .4s linear forwards;
-	// }
+	&--fixed{
+		position: absolute;
+		top: 0;
+		@include min-desktop-lg{
+			padding-top: toRem(15);
+			padding-bottom: toRem(15);
+		}
+		&:not(.fixed){
+			.navbar{
+				.nav-link{
+					color: $color-primary;
+					&:hover,
+					&:focus{
+						color: $color-secondary;
+					}
+				}
+				.social-nav__link{
+					@include min-desktop-lg{
+						color: $color-primary;
+						&:hover,
+						&:focus{
+							color: $color-secondary;
+						}
+					}
+				}
+			}
+		}
+		&.fixed{
+			position: fixed;
+			transform: translateY(-100%);
+			background-color: $color-primary;
+			box-shadow: 0 3px 18px rgba($color-black, $alpha: 0.12);
+			animation: header_in .4s linear forwards;
+		}
+	}
 	&--sticky{
 		background-color: $color-primary;
+		.navbar .btn-nav .nav-item .gradient-btn--primary{
+			@include min-desktop-lg{
+				box-shadow: none;
+			}
+		}
 	}
 	&.sticky{
 		@include min-desktop-lg{
 			position: fixed;
 			top: 0;
+		}
+	}
+}
+.navbar-toggler{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	font-size: toRem(12);
+	letter-spacing: 4px;
+	color: $color-primary;
+	background-color: $color-white;
+	font-weight: 600;
+	width: toRem(130);
+	height: toRem(60);
+	border-radius: 0;
+	box-shadow: 4px 9px 20px rgba(80, 136, 163, 0.15);
+	z-index: 10;
+	transition: all 0.25s ease;
+	&__wrapper{
+		transition: all 0.25s ease;
+	}
+	&__text{
+		@extend %transition;
+	}
+	&__icon{
+		width: toRem(20);
+		height: toRem(20);
+		color: $color-primary;
+		@extend %transition;
+		&::before,
+		&::after{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			background-color: currentColor;
+			transition: transform 0.5s cubic-bezier(0, 0.785, 0, 1);
+		}
+	}
+	&[aria-expanded="true"]{
+		width: toRem(60);
+		border-radius: 0 30px 0 0;
+		@extend %secondary-gradient;
+		.navbar-toggler{
+			&__wrapper{
+				padding-right: 6px;
+			}
+			&__text{
+				opacity: 0;
+				font-size: 0;
+				position: absolute;
+			}
+			&__icon{
+				color: $color-white;
+				transform: rotate(45deg);
+				&::after{
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
+	&:hover{
+		.navbar-toggler__text{
+			@include min-tablet{
+				color: $color-secondary;
+			}
 		}
 	}
 }

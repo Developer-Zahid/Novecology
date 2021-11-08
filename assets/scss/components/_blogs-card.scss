@@ -55,6 +55,9 @@
         }
     }
     &__card{
+        &--highlight{
+            box-shadow: toRem(10) toRem(10) toRem(20) rgba($color-black, $alpha: 0.09);
+        }
         &__image{
             min-height: toRem(300);
         }
@@ -91,5 +94,8 @@
                 }
             }
         }
+    }
+    &__container .blogs__slide{
+        margin-bottom: toRem(30);
     }
 }

@@ -1,0 +1,16 @@
+/* Sub Banner Section Style */
+.sub-banner{
+    padding: toRem(100) 0;
+    @include min-desktop-lg{
+        padding-top: toRem(175)
+    }
+    &__title{
+        color: $color-primary;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: toRem(20);
+        @include min-tablet{
+            font-size: toRem(65);
+        }
+    }      
+}

@@ -14,6 +14,7 @@
 	<link rel="icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico">
 	<!-- All CSS -->
 	<link rel="stylesheet" href="./assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/plugins/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="./assets/plugins/slick-slider/css/slick.css">
 	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -68,25 +69,25 @@
 							</button>
 							<div class="dropdown-menu d-block shadow-none border-0 rounded-0 mt-0" aria-labelledby="navbarDropdown">
 								<div class="container">
-									<ul class="nav w-100">
+									<ul class="nav w-100 mb-5">
 										<li class="nav-item">
-											<a class="dropdown-item bg-transparent" href="#!">Notre société</a>
+											<a class="dropdown-item bg-transparent" href="./our-society.html">Notre société</a>
 										</li>
 										<li class="nav-item">
-											<a class="dropdown-item bg-transparent" href="#!">Notre service</a>
+											<a class="dropdown-item bg-transparent" href="./our-service.html">Notre service</a>
 										</li>
 										<li class="nav-item">
-											<a class="dropdown-item bg-transparent" href="#!">Nous contacter</a>
+											<a class="dropdown-item bg-transparent" href="./contact.html">Nous contacter</a>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#!">Nos solutions</a>
+							<a class="nav-link" href="./solutions.html">Nos solutions</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#!">Conseils & subventions</a>
+							<a class="nav-link" href="./advice-grants.html">Conseils & subventions</a>
 						</li>
 					</ul>
 					<ul class="btn-nav nav flex-column flex-xl-row mx-xl-3 my-3 my-xl-0">
@@ -609,7 +610,22 @@
 	<!-- All Scripts -->
 	<script src="./assets/js/jquery-1.12.4.min.js"></script>
 	<script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./assets/plugins/fontawesome/js/all.min.js"></script>
 	<script src="./assets/plugins/slick-slider/js/slick.js"></script>
 	<script src="./assets/js/script.js"></script>
+	<script>
+		window.onscroll = function() {headerStickyfunction()};
+
+		let stickyHeader = document.querySelector(".header--sticky");
+		let headerElementOffsetTop = stickyHeader.offsetTop;
+
+		function headerStickyfunction() {
+			if (window.pageYOffset > headerElementOffsetTop) {
+				stickyHeader.classList.add("sticky");
+			} else {
+				stickyHeader.classList.remove("sticky");
+			}
+		}
+	</script>
 </body>
 </html>

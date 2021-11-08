@@ -1,0 +1,24 @@
+/* Common filter Style */
+.filter{
+    &__nav{
+        .nav-item{
+            margin: 0 toRem(8);
+        }
+        &__btn{
+            color: $color-primary;
+            font-size: toRem(14);
+            font-weight: 600;
+            padding: toRem(8) toRem(24);
+            background-color: transparent;
+            @extend %transition;
+            &.active{
+                color: $color-white;
+                background: linear-gradient(-140deg, $color-secondary, $color-secondary-gradient--2);;
+            }
+            &:hover,
+            &:focus{
+                background-color: #f9f9fa;
+            }
+        }
+    }
+}

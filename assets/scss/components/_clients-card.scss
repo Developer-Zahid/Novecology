@@ -1,0 +1,17 @@
+/* Common Blogs Card Style */
+.clients{
+    &__card{
+        margin-bottom: toRem(30);
+        &__wrapper{
+            border-radius: toRem(10);
+            padding: toRem(20);
+            box-shadow: toRem(5) toRem(5) toRem(20) rgba($color-primary, $alpha: 0.09);
+        }
+        &__image{
+            height: 100%;
+            max-width: toRem(150);
+            max-height: toRem(60);
+            object-fit: contain;
+        }
+    }
+}

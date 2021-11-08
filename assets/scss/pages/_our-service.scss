@@ -1,0 +1,14 @@
+/* Service Block Section Style */
+.services__block{
+    &__circle{
+        width: toRem(100);
+        height: toRem(100);
+        &__icon{
+            width: toRem(50);
+            height: toRem(50);
+        }
+        &--shadow{
+            box-shadow: 0 0 0 3px rgba($color-black, $alpha: 0.07);
+        }
+    }
+}

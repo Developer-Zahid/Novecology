@@ -3,10 +3,16 @@
     transition: all linear .3s;
 }
 
+/* Common Shadow Style */
+%shadow{
+    box-shadow: toRem(7) toRem(5) toRem(22) rgba($color-shadow, $alpha: 0.2);
+}
+
 /* Common Gradient Style */
 %primary-gradient{
     background-image: linear-gradient(-90deg, $color-primary-gradient--1, $color-primary-gradient--2);
 }
+
 %secondary-gradient{
     background-image: linear-gradient(90deg, $color-secondary, $color-secondary-gradient--2);
 }

@@ -73,7 +73,7 @@ img{
 /* Custom Container Style */
 .container{
 	@include min-desktop-lg{
-		max-width: 1180px;
+		max-width: 1150px;
 	}
 }
 
@@ -169,6 +169,9 @@ img{
 		line-height: 1;
 		@include min-tablet{
 			line-height: 1.1;
+			&--sm{
+				font-size: toRem(28);
+			}
 			&--md{
 				font-size: toRem(40);
 			}
@@ -187,6 +190,22 @@ img{
 /* Common Highlight Text Style */
 .highlight-text{
 	color: $color-primary;
+}
+
+.primary-color{
+	color: $color-primary;
+}
+.primary-bg{
+	background-color: $color-primary;
+}
+.secondary-color{
+	color: $color-secondary;
+}
+.secondary-bg{
+	background-color: $color-secondary;
+}
+.tertiary-color{
+	color: $color-secondary-gradient--2;
 }
 
 /* Common Bullet Point List Style */
