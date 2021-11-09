@@ -1,0 +1,46 @@
+/* Common Modals Style */
+#calledBackModal{
+    &::before{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(25, 51, 109, 0.37)), url(../images/shapes/shape-1.png);
+    }
+}
+#simulateProjectModal{
+    &::before{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.09), rgba(25, 51, 109, 0.37)), url(../images/shapes/shape-2.png);
+    }
+}
+.modal{
+    &::before{
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: multiply;
+        backdrop-filter: blur(4px);
+    }
+    .close span{
+        font-size: toRem(40);
+        line-height: 0;
+    }
+    .section-header__title{
+        @include desktop{
+            font-size: toRem(30);
+        }
+    }
+    &-content{
+        @include min-desktop{
+            padding: toRem(30) toRem(10);
+        }
+    }
+    &__image{
+        right: 0;
+        bottom: 0;
+        transform: translateX(15%);
+        max-width: toRem(350);
+    }
+}

@@ -92,10 +92,10 @@
 					</ul>
 					<ul class="btn-nav nav flex-column flex-xl-row mx-xl-3 my-3 my-xl-0">
 						<li class="nav-item">
-							<button class="gradient-btn--primary border-0 position-relative d-inline-block rounded-pill">Je veux être rappelé</button>
+							<button class="gradient-btn--primary border-0 position-relative d-inline-block rounded-pill" data-toggle="modal" data-target="#calledBackModal">Je veux être rappelé</button>
 						</li>
 						<li class="nav-item">
-							<button class="gradient-btn--secondary border-0 position-relative d-inline-block rounded-pill">Je simule mon projet</button>
+							<button class="gradient-btn--secondary border-0 position-relative d-inline-block rounded-pill" data-toggle="modal" data-target="#simulateProjectModal">Je simule mon projet</button>
 						</li>
 					</ul>
 					<ul class="social-nav nav mt-3 mt-xl-0 mr-xl-auto">
@@ -115,6 +115,166 @@
 		</nav>
 	</header>
 
+	<!-- Called Back Modal -->
+	<div class="modal fade" id="calledBackModal" tabindex="-1" aria-labelledby="calledBackModal" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content border-0">
+				<div class="modal-header border-0">
+					<div class="section-header mb-3">
+						<h3 class="section-header__title section-header__title--lg">
+							<strong class="d-block font-weight-bold">Je souhaite être rappelé</strong>
+							par un conseiller Novecology
+						</h3>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-7">
+								<form class="modal-form needs-validation" novalidate>
+									<div class="form-row">
+										<div class="col-12 mb-4">
+											<h4><strong class="primary-color">Vous êtes intéressé par ...</strong></h4>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="calledBackCustomCheck1">
+												<label class="custom-control-label" for="calledBackCustomCheck1">Isoler ma maison</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="calledBackCustomCheck2">
+												<label class="custom-control-label" for="calledBackCustomCheck2">Chauffer ma maison</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="calledBackCustomCheck3">
+												<label class="custom-control-label" for="calledBackCustomCheck3">Chauffer l'eau de ma maison</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="calledBackCustomCheck4">
+												<label class="custom-control-label" for="calledBackCustomCheck4">Ventiler ma maison</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="calledBackCustomCheck5">
+												<label class="custom-control-label" for="calledBackCustomCheck5">Bailleur, copropriété, EHPAD</label>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Votre prénom" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Votre nom">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="email" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Adresse email" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="tel" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Votre téléphone" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-group position-relative">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Votre code postal" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-12 text-center">
+											<button type="submit" class="gradient-btn--secondary position-relative border-0 rounded-pill">Envoyer</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<img src="./assets/images/modal/mobile-novecology.svg" alt="mobile image" class="modal__image d-none d-lg-block w-100 position-absolute">
+			</div>
+		</div>
+	</div>
+	<!-- Simulate Project Modal -->
+	<div class="modal fade" id="simulateProjectModal" tabindex="-1" aria-labelledby="simulateProjectModal" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content border-0">
+				<div class="modal-header border-0">
+					<div class="section-header flex-grow-1 text-center mb-3">
+						<h3 class="section-header__title section-header__title--lg">
+							<strong class="d-block font-weight-bold">Je simule mon projet</strong>
+						</h3>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-12">
+								<form class="modal-form needs-validation" novalidate>
+									<div class="form-row">
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Prénom*" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Nom">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="email" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Adresse email" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="tel" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Téléphone" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Ville" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group position-relative">
+												<input type="text" class="form-control shadow-none rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Code postal" required>
+												<div class="invalid-tooltip">Ce champ est nécessaire</div>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="simulateProjectCustomCheck1">
+												<label class="custom-control-label" for="simulateProjectCustomCheck1">J'accepte que les informations recueillies par Novecology pour permettre la simulation de mon projet et la relation commerciale qui peut en découler</label>
+											</div>
+										</div>
+										<div class="col-12 text-center mt-4">
+											<button type="submit" class="gradient-btn--secondary position-relative border-0 rounded-pill">Suivant</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- About Section -->
 	<section class="about section-gap text-center">
 		<div class="container">
@@ -126,7 +286,7 @@
 					<p class="about__text">Novecology est une société française spécialisé dans la mise en œuvre de travaux de rénovation énergétiques de qualité au service des particuliers et des professionnels.</p>
 				</div>
 				<div class="col-lg-8 mt-4">
-					<video class="about__video w-100" controls autoplay poster="./assets/images/video-thumbnail/video-poster.png">
+					<video class="about__video w-100" controls poster="./assets/images/video-thumbnail/video-poster.png">
 						<source src="./assets/videos/animated-timeline.mp4" type="video/mp4">
 					</video>
 				</div>
