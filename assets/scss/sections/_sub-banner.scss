@@ -13,4 +13,14 @@
             font-size: toRem(65);
         }
     }      
+    &__sub-title{
+        color: $color-primary;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: toRem(20);
+        font-size: toRem(20);
+        @include min-tablet{
+            font-size: toRem(35);
+        }
+    }      
 }

@@ -1,0 +1,16 @@
+/* Common Sticky Cards Style */
+.sticky-card{
+    padding: toRem(50) toRem(20);
+    border-radius: 8px;
+    box-shadow: 5px 5px 20px rgba(25,51,109,0.09);
+    max-width: toRem(400);
+    @include min-desktop-lg{
+        margin-top: toRem(-150);
+    }
+    &__logo{
+        max-width: toRem(220);
+    }
+    .gradient-btn--primary{
+        @extend %shadow;
+    }
+}

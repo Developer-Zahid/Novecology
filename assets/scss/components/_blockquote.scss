@@ -1,0 +1,24 @@
+/* Common Blockquote Style */
+.blockquote{
+    background-color: $color-primary;
+    padding-left: toRem(20);
+    padding-right: toRem(20);
+    &__title{
+        font-size: toRem(17);
+        @include min-tablet{
+            font-size: toRem(25);
+        }
+    }
+    &__icon{
+        font-size: toRem(20);
+        color: $color-secondary;
+        &--left{
+            top: 5px;
+            left: 8px;
+        }
+        &--right{
+            bottom: 5px;
+            right: 8px;
+        }
+    }
+}

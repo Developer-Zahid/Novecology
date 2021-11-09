@@ -122,16 +122,12 @@ img{
 		align-items: center;
 		justify-content: center;
 		font-size: 3rem;
-		background: $color-primary !important;
+		background: $color-secondary !important;
 		color: $color-white !important;
 	}
 	&-preloader .sk{
-		&-child,
-		&-rect,
-		&-cube,
-		&-spinner,
-		&-rotating-plane{
-			background: $color-primary !important;
+		&-cube{
+			background: $color-secondary !important;
 		}
 	}
 	&-next,
@@ -142,8 +138,8 @@ img{
 			width: 2rem;
 			height: 2rem;
 			border-width: 4px;
-			border-top-color: $color-primary !important;
-			border-right-color: $color-primary !important;
+			border-top-color: $color-secondary !important;
+			border-right-color: $color-secondary !important;
 		}
 	}
 }
@@ -217,6 +213,22 @@ img{
 		background-size: 15px;
 		padding-left: toRem(25);
 		margin-bottom: toRem(10);
+	}
+}
+
+.social-list{
+	.list-inline-item:not(:last-child){
+		margin-left: toRem(10);
+	}
+	&__link{
+		color: $color-primary;
+		font-size: toRem(20);
+		padding: toRem(5);
+		@extend %transition;
+		&:hover,
+		&:focus{
+			color: $color-secondary;
+		}
 	}
 }
 

@@ -1,0 +1,23 @@
+/* Common Accordions Style */
+.accordion{
+    .card{
+        &-header{
+            .btn{
+                color: $color-primary;
+                &[aria-expanded="false"]{
+                    .card-header__closer__icon{
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            &__closer__icon{
+                color: darken($color-white, $amount: 35);
+                @extend %transition;
+            }
+        }
+       &-body{
+           border-radius: 7px;
+           @extend %secondary-gradient;
+       }
+    }
+}
