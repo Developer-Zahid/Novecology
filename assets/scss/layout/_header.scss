@@ -299,6 +299,23 @@
 			top: 0;
 		}
 	}
+	&--active{
+		@include min-desktop-lg{
+			&:not(.fixed){
+				.navbar{
+					.nav-link{
+						color: $color-white;
+					}
+					.social-nav__link{
+						@include min-desktop-lg{
+							color: $color-white;
+							
+						}
+					}
+				}
+			}
+		}
+	}
 }
 .navbar-toggler{
 	position: fixed;

@@ -964,11 +964,14 @@ img {
 
 /* Common Sticky Cards Style */
 .sticky-card {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 15vh;
   padding: 3.125rem 1.25rem;
   border-radius: 8px;
   -webkit-box-shadow: 5px 5px 20px rgba(25, 51, 109, 0.09);
           box-shadow: 5px 5px 20px rgba(25, 51, 109, 0.09);
-  max-width: 25rem;
+  max-width: 18.75rem;
 }
 
 @media (min-width: 1200px) {
@@ -979,6 +982,10 @@ img {
 
 .sticky-card__logo {
   max-width: 13.75rem;
+}
+
+.sticky-card__text {
+  line-height: 1.2;
 }
 
 /* Header Section Style */
@@ -1444,6 +1451,18 @@ img {
   .header.sticky {
     position: fixed;
     top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header--active:not(.fixed) .navbar .nav-link {
+    color: #ffffff;
+  }
+}
+
+@media (min-width: 1200px) and (min-width: 1200px) {
+  .header--active:not(.fixed) .navbar .social-nav__link {
+    color: #ffffff;
   }
 }
 
