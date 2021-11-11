@@ -1,6 +1,9 @@
 /* Footer Section Style */
 .footer{
     background-color: $color-primary;
+    &__logo{
+        max-width: toRem(176);
+    }
     &__block{
         &__title{
             color: rgba($color-white, $alpha: 0.25);

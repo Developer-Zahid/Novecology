@@ -2,7 +2,20 @@
 .header{
 	z-index: 9;
 	@extend %transition;
+	.container{
+		@include min-desktop-lg{
+			max-width: 1180px;
+			padding: 0;
+		}
+	}
 	.navbar{
+		&-brand{
+			max-width: toRem(200);
+			@include min-desktop-lg{
+				max-width: toRem(180);
+			}
+
+		}
 		&-collapse{
 			&__logo{
 				order: 1;
@@ -218,7 +231,7 @@
 			.nav-item{
 				&:not(:last-child){
 					@include min-desktop-lg{
-						margin-right: toRem(20);
+						margin-right: toRem(15);
 					}
 					@include desktop-lg{
 						margin-bottom: toRem(15);
@@ -277,12 +290,31 @@
 				}
 			}
 		}
+		.navbar-brand{
+			@include desktop-lg{
+				display: none !important;
+			}
+			&__logo{
+				display: block;
+			}
+			&__active-logo{
+				display: none;
+			}
+		}
 		&.fixed{
 			position: fixed;
 			transform: translateY(-100%);
 			background-color: $color-primary;
 			box-shadow: 0 3px 18px rgba($color-black, $alpha: 0.12);
 			animation: header_in .4s linear forwards;
+			.navbar-brand{
+				&__logo{
+					display: none;
+				}
+				&__active-logo{
+					display: block;
+				}
+			}
 		}
 	}
 	&--sticky{

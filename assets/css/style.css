@@ -985,6 +985,23 @@ img {
   z-index: 9;
 }
 
+@media (min-width: 1200px) {
+  .header .container {
+    max-width: 1180px;
+    padding: 0;
+  }
+}
+
+.header .navbar-brand {
+  max-width: 12.5rem;
+}
+
+@media (min-width: 1200px) {
+  .header .navbar-brand {
+    max-width: 11.25rem;
+  }
+}
+
 .header .navbar-collapse__logo {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
@@ -1341,7 +1358,7 @@ img {
 
 @media (min-width: 1200px) {
   .header .navbar .btn-nav .nav-item:not(:last-child) {
-    margin-right: 1.25rem;
+    margin-right: 0.9375rem;
   }
 }
 
@@ -1412,6 +1429,20 @@ img {
   }
 }
 
+@media (max-width: 1199px) {
+  .header--fixed .navbar-brand {
+    display: none !important;
+  }
+}
+
+.header--fixed .navbar-brand__logo {
+  display: block;
+}
+
+.header--fixed .navbar-brand__active-logo {
+  display: none;
+}
+
 .header--fixed.fixed {
   position: fixed;
   -webkit-transform: translateY(-100%);
@@ -1426,6 +1457,14 @@ img {
      -moz-animation: header_in .4s linear forwards;
        -o-animation: header_in .4s linear forwards;
           animation: header_in .4s linear forwards;
+}
+
+.header--fixed.fixed .navbar-brand__logo {
+  display: none;
+}
+
+.header--fixed.fixed .navbar-brand__active-logo {
+  display: block;
 }
 
 .header--sticky {
@@ -1593,6 +1632,10 @@ img {
 /* Footer Section Style */
 .footer {
   background-color: #19336d;
+}
+
+.footer__logo {
+  max-width: 11rem;
 }
 
 .footer__block__title {
