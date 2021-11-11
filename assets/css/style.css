@@ -4,14 +4,6 @@ Template Name: Novecology
 Version: 1.00
 ------------------
 
-----------------
-Table of Content
-----------------
-
-1.Google Fonts Link
-2.Typography Reset
-3.Reset CSS
-
 ------------------
 */
 /* Google Fonts Link */
@@ -532,7 +524,7 @@ img {
       -ms-transform: translateX(15%);
        -o-transform: translateX(15%);
           transform: translateX(15%);
-  max-width: 21.875rem;
+  max-width: 13.75rem;
 }
 
 /* Common Blogs Card Style */
