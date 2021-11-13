@@ -1,58 +1,67 @@
 /* Common Forms Style */
-.modal-form{
-    .form{
-        &-group{
-            margin-bottom: toRem(25);
+.form{
+    &-group{
+        margin-bottom: toRem(25);
+    }
+    &-control{
+        font-size: toRem(14);
+        font-weight: 600;
+        color: $color-black--200;
+        border-color: rgba($color-black, $alpha: 0.08);
+        text-shadow: none;
+        &::placeholder{
+            color: darken($color-white, $amount: 40);
+            opacity: 1;
         }
-        &-control{
-            font-size: toRem(14);
-            font-weight: 600;
-            color: $color-black--200;
-            border-color: rgba($color-black, $alpha: 0.08);
-            text-shadow: none;
-            &::placeholder{
-                color: darken($color-white, $amount: 40);
-                opacity: 1;
-            }
-            &:focus{
-                border-color: $color-primary;
-            }
+        &:focus{
+            border-color: $color-primary;
         }
     }
-    .invalid-tooltip{
-        font-size: toRem(10);
-        background-color: $color-primary;
-    }
-    .custom-control{
-        margin-bottom: toRem(5);
-        &-label{
-            font-size: toRem(14);
-            font-weight: 600;
-            color: rgba($color-primary, $alpha: 0.9);
-            cursor: pointer;
-            &::before{
-                border-radius: 50%;
-                border-width: 2px;
-                border-color: darken($color-white, $amount: 15);
-            }
+}
+.custom-file-input:focus ~ .custom-file-label{
+    border-color: $color-primary;
+}
+.custom-file-label,
+.custom-select{
+    color: darken($color-white, $amount: 40);
+}
+.custom-file-label::after{
+    background-color: darken($color-white, $amount: 5);
+    border-radius: 0;
+}
+.invalid-tooltip{
+    font-size: toRem(10);
+    background-color: $color-primary;
+}
+.custom-control{
+    margin-bottom: toRem(5);
+    &-label{
+        font-size: toRem(14);
+        font-weight: 600;
+        color: rgba($color-primary, $alpha: 0.9);
+        cursor: pointer;
+        &::before{
+            border-radius: 50% !important;
+            border-width: 2px;
+            border-color: darken($color-white, $amount: 15);
         }
-        &-input{
-            &:focus{
-                &:not(:checked) ~ .custom-control-label::before{
-                    border-color: $color-secondary;
-                }
-                ~ .custom-control-label::before{
-                    box-shadow: 0 0 0 .2rem rgba($color-secondary, $alpha: 0.3);
-                }
-            }
-            &:checked ~ .custom-control-label::before{
+    }
+    &-input{
+        &:focus{
+            &:not(:checked) ~ .custom-control-label::before{
                 border-color: $color-secondary;
-                background-color: $color-secondary;
             }
-            &:not(:disabled):active ~ .custom-control-label::before{
-                border-color: rgba($color-secondary, $alpha: 0.3);
-                background-color: rgba($color-secondary, $alpha: 0.3);
+            ~ .custom-control-label::before{
+                box-shadow: 0 0 0 .2rem rgba($color-secondary, $alpha: 0.3);
             }
+        }
+        &:checked ~ .custom-control-label::before{
+            border-color: $color-secondary;
+            background-color: $color-secondary;
+        }
+        &:not(:disabled):active ~ .custom-control-label::before{
+            border-color: rgba($color-secondary, $alpha: 0.3);
+            background-color: rgba($color-secondary, $alpha: 0.3);
         }
     }
 }

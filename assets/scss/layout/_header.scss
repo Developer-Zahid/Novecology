@@ -5,10 +5,18 @@
 	.container{
 		@include min-desktop-lg{
 			max-width: 1180px;
-			padding: 0;
 		}
 	}
 	.navbar{
+		@include min-desktop-lg{
+			justify-content: center;
+			> .container{
+				max-width: fit-content;
+				padding: 0;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
 		&-brand{
 			max-width: toRem(200);
 			@include min-desktop-lg{

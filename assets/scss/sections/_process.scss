@@ -8,6 +8,10 @@
             width: toRem(70);
             height: toRem(70);
             background-image: linear-gradient(110deg, $color-secondary, $color-secondary-gradient--2 100%);
+            &--shadow{
+                background-image: none;
+                box-shadow: 5px 5px 20px rgba(74,159,198,0.14);
+            }
         }
         &__icon{
             width: toRem(30);

@@ -3,6 +3,7 @@
     background-color: $color-primary;
     &__logo{
         max-width: toRem(176);
+        margin-bottom: toRem(15);
     }
     &__block{
         &__title{
@@ -40,6 +41,24 @@
                 color: $color-secondary;
                 text-decoration: underline;
             }
+        }
+    }
+    &__form{
+        @include min-desktop-lg{
+            flex-wrap: nowrap;
+        }
+        .form-control{
+            background-color: darken($color-white, $amount: 10);
+            width: 100%;
+            min-height: toRem(50);
+            padding-left: toRem(20);
+            padding-right: toRem(115);
+        }
+        .gradient-btn--secondary{
+            right: 0;
+            border-radius: 0 toRem(45) toRem(45) 0;
+            padding: 0 toRem(15);
+            height: calc(100% - 4px);
         }
     }
 }
