@@ -338,6 +338,9 @@
 	}
 	&--sticky{
 		background-color: $color-primary;
+		@media (min-width: 1200px) and (max-width: 1250px) {
+			padding: 10px 0;
+		}
 		.navbar .btn-nav .nav-item .gradient-btn--primary{
 			@include min-desktop-lg{
 				box-shadow: none;

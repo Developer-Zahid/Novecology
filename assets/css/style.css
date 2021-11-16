@@ -1514,6 +1514,12 @@ img {
   background-color: #19336d;
 }
 
+@media (min-width: 1200px) and (max-width: 1250px) {
+  .header--sticky {
+    padding: 10px 0;
+  }
+}
+
 @media (min-width: 1200px) {
   .header--sticky .navbar .btn-nav .nav-item .gradient-btn--primary {
     -webkit-box-shadow: none;
