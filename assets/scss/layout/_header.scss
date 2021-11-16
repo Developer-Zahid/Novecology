@@ -219,6 +219,9 @@
 					color: $color-white;
 					padding: toRem(20) toRem(15);
 				}
+				@media (min-width: 1200px) and (max-width: 1250px) {
+					padding: 10px 8px;
+				}
 				@extend %transition;
 				&:hover,
 				&:focus-visible{
@@ -245,8 +248,16 @@
 						margin-bottom: toRem(15);
 					}
 				}
-				.gradient-btn--primary{
-					@extend %shadow;
+				.gradient-btn{
+					&--primary{
+						@extend %shadow;
+					}
+					&--primary,
+					&--secondary{
+						@media (min-width: 1200px) and (max-width: 1250px) {
+							padding: 10px 8px;
+						}
+					}
 				}
 			}
 			@include desktop-lg{

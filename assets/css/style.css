@@ -1372,6 +1372,12 @@ img {
   }
 }
 
+@media (min-width: 1200px) and (max-width: 1250px) {
+  .header .navbar .nav-link {
+    padding: 10px 8px;
+  }
+}
+
 .header .navbar .nav-link:hover, .header .navbar .nav-link:focus-visible {
   color: #5bc4b4;
 }
@@ -1396,6 +1402,12 @@ img {
 @media (max-width: 1199px) {
   .header .navbar .btn-nav .nav-item:not(:last-child) {
     margin-bottom: 0.9375rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1250px) {
+  .header .navbar .btn-nav .nav-item .gradient-btn--primary, .header .navbar .btn-nav .nav-item .gradient-btn--secondary {
+    padding: 10px 8px;
   }
 }
 
